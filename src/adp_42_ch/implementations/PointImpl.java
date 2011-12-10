@@ -9,6 +9,7 @@ import adp_42_ch.interfaces.Point;
 /**
  *
  * @author panos
+ * @author olli
  */
 final class PointImpl implements Point {
 
@@ -55,4 +56,11 @@ final class PointImpl implements Point {
     public int hashCode(){
     	return Integer.valueOf(x).hashCode() + Integer.valueOf(y).hashCode();
     }
+
+	@Override
+	public int compareTo(Point other) {
+		int xCompare=Integer.valueOf(this.x).compareTo(Integer.valueOf(other.x()));
+		if(xCompare==0) return Integer.valueOf(this.y).compareTo(Integer.valueOf(other.y()));
+		else return xCompare;
+	}
 }

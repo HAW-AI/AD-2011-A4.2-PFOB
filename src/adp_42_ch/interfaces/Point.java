@@ -8,7 +8,7 @@ package adp_42_ch.interfaces;
  *
  * @author panos
  */
-public interface Point {
+public interface Point extends Comparable<Point> {
 
     public int x();
 
