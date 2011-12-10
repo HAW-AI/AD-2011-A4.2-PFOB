@@ -5,6 +5,7 @@
 package adp_42_ch.implementations;
 
 import adp_42_ch.interfaces.Point;
+import static adp_42_ch.implementations.Images.*;
 
 /**
  *
@@ -36,7 +37,12 @@ final class PointImpl implements Point {
 
     @Override
     public double distanceToOrigin() {
-        return Math.sqrt(x * x + y * y);
+        return distanceTo(point(0,0));
+    }
+    
+    @Override
+    public double distanceTo(Point other) {
+        return Math.sqrt(Math.pow(this.x-other.x(), 2) + Math.pow(this.y-other.y(),2));
     }
     
     @Override
@@ -59,8 +65,8 @@ final class PointImpl implements Point {
 
 	@Override
 	public int compareTo(Point other) {
-		int xCompare=Integer.valueOf(this.x).compareTo(Integer.valueOf(other.x()));
-		if(xCompare==0) return Integer.valueOf(this.y).compareTo(Integer.valueOf(other.y()));
-		else return xCompare;
+		int yCompare=Integer.valueOf(this.y).compareTo(Integer.valueOf(other.y()));
+		if(yCompare==0) return Integer.valueOf(this.x).compareTo(Integer.valueOf(other.x()));
+		else return yCompare;
 	}
 }

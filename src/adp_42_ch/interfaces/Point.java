@@ -15,4 +15,6 @@ public interface Point extends Comparable<Point> {
     public int y();
 
     public double distanceToOrigin();
+    
+    public double distanceTo(Point other);
 }
