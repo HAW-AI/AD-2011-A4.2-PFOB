@@ -34,7 +34,7 @@ final class PointImpl implements Point {
     }
 
     @Override
-    public double distance() {
+    public double distanceToOrigin() {
         return Math.sqrt(x * x + y * y);
     }
 }

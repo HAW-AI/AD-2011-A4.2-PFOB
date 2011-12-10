@@ -50,7 +50,7 @@ public class ImageImpl implements Image {
 
         @Override
         public int compare(Point point1, Point point2) {
-            return point1.distance()==point2.distance()?(new LexicographicComparator()).compare(point1, point2):Double.valueOf(point1.distance()).compareTo(point2.distance());
+            return point1.distanceToOrigin()==point2.distanceToOrigin()?(new LexicographicComparator()).compare(point1, point2):Double.valueOf(point1.distanceToOrigin()).compareTo(point2.distanceToOrigin());
         }
     }
 }

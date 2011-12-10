@@ -14,5 +14,5 @@ public interface Point {
 
     public int y();
 
-    public double distance();
+    public double distanceToOrigin();
 }
