@@ -37,4 +37,22 @@ final class PointImpl implements Point {
     public double distanceToOrigin() {
         return Math.sqrt(x * x + y * y);
     }
+    
+    @Override
+    public String toString(){
+    	return "("+x+", "+y+")";
+    }
+    
+    @Override
+    public boolean equals(Object o){
+    	if(this==o) return true;
+    	if(!(o instanceof Point)) return false;
+    	Point other=(Point) o;
+    	return other.x()==this.x() && other.y()==this.y();
+    }
+    
+    @Override
+    public int hashCode(){
+    	return Integer.valueOf(x).hashCode() + Integer.valueOf(y).hashCode();
+    }
 }
