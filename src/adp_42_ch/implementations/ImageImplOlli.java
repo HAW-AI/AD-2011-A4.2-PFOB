@@ -37,7 +37,7 @@ public class ImageImplOlli implements Image {
 			else{
 				if(p1.distanceTo(p0)<p2.distanceTo(p0)) pointsToRemove.add(p1);
 				else pointsToRemove.add(p2);
-				System.out.println("Hallo"+p1+p2);
+//				System.out.println("Hallo"+p1+p2);
 				return 0;
 			}
 				 
@@ -50,24 +50,24 @@ public class ImageImplOlli implements Image {
 	}
 	
 	private int T(Point p0, Point p1, Point p2){
-		return (p1.x()-p0.y())*(p2.y()-p0.y())-(p2.x()-p0.x())*(p1.y()-p0.y());
+		return (p1.x()-p0.x())*(p2.y()-p0.y())-(p2.x()-p0.x())*(p1.y()-p0.y());
 	}
 	
 	private List<Point> pointsSortedByAngle(Set<Point> points){
 		SortedSet<Point> pointsSortedLexicographically=new TreeSet<Point>(points);
-		System.out.println("Lexikographische Sortierung: "+pointsSortedLexicographically);
+//		System.out.println("Lexikographische Sortierung: "+pointsSortedLexicographically);
 		Point p0=pointsSortedLexicographically.first();
 		
-		System.out.println("P0: "+p0);
+//		System.out.println("P0: "+p0);
 		
 		pointsSortedLexicographically.remove(p0);
 		AngleComparator angleComparator=new AngleComparator(p0);
 		List<Point> pointsSortedByAngle=new LinkedList<Point>(pointsSortedLexicographically);
 		Collections.sort(pointsSortedByAngle, angleComparator);
 		
-		System.out.println(pointsSortedByAngle);
+//		System.out.println(pointsSortedByAngle);
 		
-		System.out.println("PointsToRemove: "+angleComparator.pointsToRemove());
+//		System.out.println("PointsToRemove: "+angleComparator.pointsToRemove());
 		pointsSortedByAngle.removeAll(angleComparator.pointsToRemove());
 		
 //		System.out.println(pointsSortedByAngle);
@@ -81,10 +81,10 @@ public class ImageImplOlli implements Image {
 	public List<Point> convexHull() {
 		if(points.size()<4) return new ArrayList<Point>(points);
 		List<Point> convexHull=pointsSortedByAngle(points);
-		System.out.println("Sortierte Punkte: "+convexHull);
+//		System.out.println("Sortierte Punkte: "+convexHull);
 		int i=1;
 		while(i+1 < convexHull.size()){
-			if(T(convexHull.get(i-1),convexHull.get(i),convexHull.get(i+1))>0) i++;
+			if(T(convexHull.get(i-1),convexHull.get(i+1),convexHull.get(i))<0) i++;
 			else {
 				convexHull.remove(i);
 				if(i>1)i--;
