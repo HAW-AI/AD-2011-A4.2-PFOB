@@ -2,7 +2,6 @@ package adp_42_ch.implementations;
 
 import java.util.*;
 
-import adp_42_ch.interfaces.Image;
 import adp_42_ch.interfaces.Point;
 
 public class ImageGrahamScan extends AbstractImage {
@@ -89,6 +88,7 @@ public class ImageGrahamScan extends AbstractImage {
 				if(i>1)i--;
 			}
 		}
+		Collections.sort(convexHull);
 		return convexHull;
 	}
 
@@ -96,6 +96,7 @@ public class ImageGrahamScan extends AbstractImage {
 	public List<Point> innerPoints_(Collection<Point> points, List<Point> convexHull) {
 		List<Point> result=new ArrayList<Point>(points);
 		result.removeAll(convexHull);
+		Collections.sort(result, new DistanceComparator());
 		return result;
 	}
 	

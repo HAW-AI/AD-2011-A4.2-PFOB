@@ -7,14 +7,13 @@ import adp_42_ch.interfaces.Point;
 
 public abstract class AbstractImage implements Image {
 
-//	protected final Set<Point> points;
+
 	
 	protected final List<Point> convexHull;
 	
 	protected final List<Point> innerPoints;
 	
 	protected AbstractImage(Collection<Point> points){
-//		this.points=new HashSet<Point>(points);
 		this.convexHull=convexHull_(points);
 		this.innerPoints=innerPoints_(points, convexHull);
 	}
@@ -32,5 +31,12 @@ public abstract class AbstractImage implements Image {
 	public List<Point> convexHull() {
 		return convexHull;
 	}
+	
+    protected static class DistanceComparator implements Comparator<Point> {
+        @Override
+        public int compare(Point point1, Point point2) {
+            return point1.distanceToOrigin()==point2.distanceToOrigin()?(point1.compareTo(point2)):Double.valueOf(point1.distanceToOrigin()).compareTo(point2.distanceToOrigin());
+        }
+    }
 
 }

@@ -46,11 +46,5 @@ public class ImageImpl extends AbstractImage {
         }
     }
 
-    static class DistanceComparator implements Comparator<Point> {
 
-        @Override
-        public int compare(Point point1, Point point2) {
-            return point1.distanceToOrigin()==point2.distanceToOrigin()?(new LexicographicComparator()).compare(point1, point2):Double.valueOf(point1.distanceToOrigin()).compareTo(point2.distanceToOrigin());
-        }
-    }
 }
