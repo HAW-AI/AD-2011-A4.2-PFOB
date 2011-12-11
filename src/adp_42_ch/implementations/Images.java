@@ -20,7 +20,7 @@ public class Images {
 		return PointImpl.valueOf(x,y);
 	}
 	
-	public static RandomPoints randomPoints(int numberOfPoints, int maxX, int maxY){
-		return RandomPointsImpl.create(numberOfPoints, maxX, maxY);
+	public static RandomPoints randomPoints(int numberOfPoints, int minX, int maxX, int minY, int maxY){
+		return RandomPointsImpl.create(numberOfPoints, minX, maxX, minY, maxY);
 	}
 }

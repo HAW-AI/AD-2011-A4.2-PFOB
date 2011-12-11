@@ -21,21 +21,21 @@ public class RandomPointsImpl implements RandomPoints {
 	
 	private final Random random;
 	
-	private RandomPointsImpl (long seed, int numberOfPoints, int maxX, int maxY){
+	private RandomPointsImpl (long seed, int numberOfPoints, int minX, int maxX, int minY, int maxY){
 		this.seed=seed;
 		this.random=new Random(seed);
-		this.points=calculatePoints(numberOfPoints, maxX, maxY);
+		this.points=calculatePoints(numberOfPoints, minX, maxX, minY, maxY);
 		this.maxX=maxX;
 		this.maxY=maxY;
 	}
-	protected static RandomPointsImpl create(int numberOfPoints, int maxX, int maxY){
-		return new RandomPointsImpl(System.currentTimeMillis(), numberOfPoints, maxX, maxY);
+	protected static RandomPointsImpl create(int numberOfPoints, int minX, int maxX, int minY, int maxY){
+		return new RandomPointsImpl(System.currentTimeMillis(), numberOfPoints, minX, maxX, minY, maxY);
 	}
 	
-	private Set<Point> calculatePoints(int numberOfPoints, int maxX, int maxY) {
+	private Set<Point> calculatePoints(int numberOfPoints, int minX, int maxX, int minY, int maxY) {
 		Set<Point> result=new HashSet<Point>();
 		for(int i=0; i<numberOfPoints; i++){
-			result.add(point(random.nextInt(maxX), random.nextInt(maxY)));
+			result.add(point(random.nextInt(maxX-minX)+minX, random.nextInt(maxY-minY)+minY));
 		}
 		return result;
 	}
