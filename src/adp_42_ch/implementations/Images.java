@@ -23,4 +23,8 @@ public class Images {
 	public static RandomPoints randomPoints(int numberOfPoints, int minX, int maxX, int minY, int maxY){
 		return RandomPointsImpl.create(numberOfPoints, minX, maxX, minY, maxY);
 	}
+	
+	public static RandomPoints NaRP(){
+		return NaRP.create();
+	}
 }

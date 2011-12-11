@@ -14,4 +14,8 @@ public interface RandomPoints {
 	
 	int maxY();
 	
+	int minX();
+	
+	int minY();
+	
 }

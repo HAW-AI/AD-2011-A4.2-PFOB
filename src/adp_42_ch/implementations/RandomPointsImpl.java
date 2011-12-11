@@ -17,6 +17,10 @@ public class RandomPointsImpl implements RandomPoints {
 	
 	private final int maxY;
 	
+	private final int minX;
+	
+	private final int minY;
+	
 	private final Set<Point> points;
 	
 	private final Random random;
@@ -27,9 +31,16 @@ public class RandomPointsImpl implements RandomPoints {
 		this.points=calculatePoints(numberOfPoints, minX, maxX, minY, maxY);
 		this.maxX=maxX;
 		this.maxY=maxY;
+		this.minX=minX;
+		this.minY=minY;
 	}
 	protected static RandomPointsImpl create(int numberOfPoints, int minX, int maxX, int minY, int maxY){
-		return new RandomPointsImpl(System.currentTimeMillis(), numberOfPoints, minX, maxX, minY, maxY);
+		return create(System.currentTimeMillis(), numberOfPoints, minX, maxX, minY, maxY);
+	}
+	
+	protected static RandomPointsImpl create(long seed, int numberOfPoints, int minX, int maxX, int minY, int maxY){
+		if(numberOfPoints<=0 || minX>maxX || minY>maxY) NaRP();
+		return create(seed, numberOfPoints, minX, maxX, minY, maxY);
 	}
 	
 	private Set<Point> calculatePoints(int numberOfPoints, int minX, int maxX, int minY, int maxY) {
@@ -64,6 +75,14 @@ public class RandomPointsImpl implements RandomPoints {
 	@Override
 	public int maxY() {
 		return maxY;
+	}
+	@Override
+	public int minX() {
+		return minX;
+	}
+	@Override
+	public int minY() {
+		return minY;
 	}
 
 }
