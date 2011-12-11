@@ -1,4 +1,4 @@
-package application;
+package adp_42_ch.application;
 
 import static adp_42_ch.implementations.Images.*;
 import adp_42_ch.interfaces.*;

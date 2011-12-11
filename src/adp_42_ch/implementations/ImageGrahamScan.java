@@ -11,7 +11,7 @@ public class ImageGrahamScan extends AbstractImage {
 		super(points);
 	}
 	
-	protected static ImageGrahamScan create(Collection<Point> points){
+	static ImageGrahamScan create(Collection<Point> points){
 		return new ImageGrahamScan(points);
 	}
 	

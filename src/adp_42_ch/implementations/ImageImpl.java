@@ -23,7 +23,7 @@ public class ImageImpl extends AbstractImage {
 		super(points);
 	}
 	
-	protected static ImageImpl create(Collection<Point> points){
+	static ImageImpl create(Collection<Point> points){
 		return new ImageImpl(points);
 	}
 	

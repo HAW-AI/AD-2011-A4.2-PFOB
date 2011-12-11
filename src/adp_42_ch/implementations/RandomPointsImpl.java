@@ -38,7 +38,7 @@ public class RandomPointsImpl implements RandomPoints {
 		return create(System.currentTimeMillis(), numberOfPoints, minX, maxX, minY, maxY);
 	}
 	
-	protected static RandomPoints create(long seed, int numberOfPoints, int minX, int maxX, int minY, int maxY){
+	static RandomPoints create(long seed, int numberOfPoints, int minX, int maxX, int minY, int maxY){
 		if(numberOfPoints<=0 || minX>maxX || minY>maxY || 
 				maxX==Integer.MAX_VALUE || maxY==Integer.MAX_VALUE || maxX+1-minX<0 || maxY+1-minY<0
 				|| ((long)(maxX+1-minX)*(long)(maxY+1-minY))<numberOfPoints) return NaRP();
