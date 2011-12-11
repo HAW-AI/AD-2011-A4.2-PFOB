@@ -5,16 +5,15 @@ import java.util.*;
 import adp_42_ch.interfaces.Image;
 import adp_42_ch.interfaces.Point;
 
-public class ImageImplOlli implements Image {
+public class ImageGrahamScan extends AbstractImage {
 
-	private final Set<Point> points;
 	
-	private ImageImplOlli(Collection<Point> points){
-		this.points=new HashSet<Point>(points);
+	private ImageGrahamScan(Collection<Point> points){
+		super(points);
 	}
 	
-	protected static ImageImplOlli create(Collection<Point> points){
-		return new ImageImplOlli(points);
+	protected static ImageGrahamScan create(Collection<Point> points){
+		return new ImageGrahamScan(points);
 	}
 	
 	private class AngleComparator implements Comparator<Point>{
@@ -53,7 +52,7 @@ public class ImageImplOlli implements Image {
 		return (p1.x()-p0.x())*(p2.y()-p0.y())-(p2.x()-p0.x())*(p1.y()-p0.y());
 	}
 	
-	private List<Point> pointsSortedByAngle(Set<Point> points){
+	private List<Point> pointsSortedByAngle(Collection<Point> points){
 		SortedSet<Point> pointsSortedLexicographically=new TreeSet<Point>(points);
 //		System.out.println("Lexikographische Sortierung: "+pointsSortedLexicographically);
 		Point p0=pointsSortedLexicographically.first();
@@ -78,7 +77,7 @@ public class ImageImplOlli implements Image {
 	}
 	
 	@Override
-	public List<Point> convexHull() {
+	protected List<Point> convexHull_(Collection<Point> points) {
 		if(points.size()<4) return new ArrayList<Point>(points);
 		List<Point> convexHull=pointsSortedByAngle(points);
 //		System.out.println("Sortierte Punkte: "+convexHull);
@@ -94,9 +93,12 @@ public class ImageImplOlli implements Image {
 	}
 
 	@Override
-	public List<Point> innerPoints() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Point> innerPoints_(Collection<Point> points, List<Point> convexHull) {
+		List<Point> result=new ArrayList<Point>(points);
+		result.removeAll(convexHull);
+		return result;
 	}
+	
+
 
 }

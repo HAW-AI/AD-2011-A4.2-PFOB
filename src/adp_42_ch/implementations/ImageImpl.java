@@ -6,6 +6,8 @@ package adp_42_ch.implementations;
 
 import adp_42_ch.interfaces.Image;
 import adp_42_ch.interfaces.Point;
+
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
@@ -15,28 +17,26 @@ import java.util.TreeSet;
  *
  * @author panos
  */
-public class ImageImpl implements Image {
+public class ImageImpl extends AbstractImage {
 
-    private final Set<Point> points;
+	private ImageImpl(Collection<Point> points){
+		super(points);
+	}
+	
+	protected static ImageImpl create(Collection<Point> points){
+		return new ImageImpl(points);
+	}
+	
 
-    private ImageImpl(Set<Point> points) {
-        this.points = new TreeSet<Point>(points);
-    }
-
-    @Override
-    public List<Point> convexHull() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public List<Point> innerPoints() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    private List<Point> convexHull_grahamScan() {
-
+    protected List<Point> convexHull_(Collection<Point> points) {
+//TODO: Not implemented
         return null;
     }
+    
+    protected List<Point> innerPoints_(Collection<Point> points, List<Point> convexHull) {
+    	//TODO: Not implemented
+    	        return null;
+    	    }
 
     static class LexicographicComparator implements Comparator<Point> {
 

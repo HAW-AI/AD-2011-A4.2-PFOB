@@ -10,7 +10,7 @@ public class Images {
 	private Images(){}
 	
 	public static Image image(Collection<Point> points){
-		return ImageImplOlli.create(points);
+		return ImageGrahamScan.create(points);
 	}
 	public static Image image(Point... points){
 		return image(Arrays.asList(points));
