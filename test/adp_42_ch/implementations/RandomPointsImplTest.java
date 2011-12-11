@@ -34,28 +34,30 @@ public class RandomPointsImplTest {
 	@Test
 	public void testSize() {
 		assertEquals(10,randomPoints(10, 1,10,1,10).size());
+		assertEquals(1,randomPoints(1, 1,1,2,2).size());
+		assertEquals(0,randomPoints(2, 1,1,2,2).size());
 	}
 
 	@Test
 	public void testMaxX() {
-		assertEquals(2,randomPoints(10, 1,2,3,4).maxX());
+		assertEquals(2,randomPoints(2, 1,2,3,4).maxX());
 		System.out.println(randomPoints(10, Integer.MIN_VALUE,10,3,4).points());
 		assertEquals(NaRP(),randomPoints(10, 1,Integer.MAX_VALUE,3,4));
 	}
 
 	@Test
 	public void testMaxY() {
-		assertEquals(4,randomPoints(10, 1,2,3,4).maxY());
+		assertEquals(4,randomPoints(2, 1,2,3,4).maxY());
 	}
 
 	@Test
 	public void testMinX() {
-		assertEquals(1,randomPoints(10, 1,2,3,4).minX());
+		assertEquals(1,randomPoints(4, 1,2,3,4).minX());
 	}
 
 	@Test
 	public void testMinY() {
-		assertEquals(3,randomPoints(10, 1,2,3,4).minY());
+		assertEquals(3,randomPoints(4, 1,2,3,4).minY());
 	}
 
 }

@@ -39,15 +39,18 @@ public class RandomPointsImpl implements RandomPoints {
 	}
 	
 	protected static RandomPoints create(long seed, int numberOfPoints, int minX, int maxX, int minY, int maxY){
-		if(numberOfPoints<=0 || minX>maxX || minY>maxY || maxX==Integer.MAX_VALUE || maxY==Integer.MAX_VALUE || maxX+1-minX<0 || maxY+1-minY<0) return NaRP();
+		if(numberOfPoints<=0 || minX>maxX || minY>maxY || 
+				maxX==Integer.MAX_VALUE || maxY==Integer.MAX_VALUE || maxX+1-minX<0 || maxY+1-minY<0
+				|| ((long)(maxX+1-minX)*(long)(maxY+1-minY))<numberOfPoints) return NaRP();
 		return new RandomPointsImpl(seed, numberOfPoints, minX, maxX, minY, maxY);
 	}
 	
 	private Set<Point> calculatePoints(int numberOfPoints, int minX, int maxX, int minY, int maxY) {
 		Set<Point> result=new HashSet<Point>();
-		for(int i=0; i<numberOfPoints; i++){
-			result.add(point(random.nextInt(maxX-minX+1)+minX, random.nextInt(maxY-minY+1)+minY));
-		}
+//		for(int i=0; i<numberOfPoints; i++){
+//			result.add(point(random.nextInt(maxX-minX+1)+minX, random.nextInt(maxY-minY+1)+minY));
+//		}
+		while(numberOfPoints>result.size()) result.add(point(random.nextInt(maxX-minX+1)+minX, random.nextInt(maxY-minY+1)+minY));
 		return result;
 	}
 
