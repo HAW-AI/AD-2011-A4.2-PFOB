@@ -14,6 +14,7 @@ public class Controller {
 	
 	public static void main(String[] args) {
 		Controller controller=create();
-		View view=View.create(controller, 600, 600, image(randomPoints(20, -200, 200, -200, 200).points()));
+		View view=View.create(controller, 600, 600);
+		view.display(image(randomPoints(20, -200, 200, -200, 200).points()));
 	}
 }
