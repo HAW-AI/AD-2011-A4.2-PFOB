@@ -4,20 +4,16 @@
  */
 package adp_42_ch.interfaces;
 
-import java.util.Comparator;
 import java.util.List;
 
 /**
  *
  * @author panos
+ * @author olli
  */
 public interface Image {
 
     public List<Point> convexHull();
 
     public List<Point> innerPoints();
-
-    public List<Point> convexHull(Comparator<Point> comparator);
-
-    public List<Point> innerPoints(Comparator<Point> comparator);
 }
