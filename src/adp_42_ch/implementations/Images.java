@@ -22,10 +22,12 @@ public class Images {
 	
 	public static RandomPoints randomPoints(int numberOfPoints, int minX, int maxX, int minY, int maxY){
 		return RandomPointsImpl.create(numberOfPoints, minX, maxX, minY, maxY);
+//		return RandomPointsDebugImpl.create(numberOfPoints, minX, maxX, minY, maxY);
 	}
 	
 	public static RandomPoints randomPoints(long seed, int numberOfPoints, int minX, int maxX, int minY, int maxY){
 		return RandomPointsImpl.create(seed, numberOfPoints, minX, maxX, minY, maxY);
+//		return RandomPointsDebugImpl.create(seed, numberOfPoints, minX, maxX, minY, maxY);
 	}
 
         public static RandomPoints NaRP(){
