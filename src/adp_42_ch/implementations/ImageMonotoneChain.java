@@ -23,9 +23,12 @@ import static adp_42_ch.implementations.Images.point;
  */
 public class ImageMonotoneChain extends AbstractImage {
 
-
     private ImageMonotoneChain(Collection<Point> points) {
         super(points);
+    }
+
+    static ImageMonotoneChain create(Collection<Point> points) {
+        return new ImageMonotoneChain(points);
     }
 
     @Override

@@ -10,7 +10,7 @@ public class Images {
 	private Images(){}
 	
 	public static Image image(Collection<Point> points){
-		return ImageGrahamScan.create(points);
+		return ImageMonotoneChain.create(points);
 	}
 	public static Image image(Point... points){
 		return image(Arrays.asList(points));
@@ -24,7 +24,11 @@ public class Images {
 		return RandomPointsImpl.create(numberOfPoints, minX, maxX, minY, maxY);
 	}
 	
-	public static RandomPoints NaRP(){
+	public static RandomPoints randomPoints(long seed, int numberOfPoints, int minX, int maxX, int minY, int maxY){
+		return RandomPointsImpl.create(seed, numberOfPoints, minX, maxX, minY, maxY);
+	}
+
+        public static RandomPoints NaRP(){
 		return NaRP.create();
 	}
 }
