@@ -33,4 +33,8 @@ public class Images {
         public static RandomPoints NaRP(){
 		return NaRP.create();
 	}
+        
+        public static int T(Point p0, Point p1, Point p2){
+		return (p1.x()-p0.x())*(p2.y()-p0.y())-(p2.x()-p0.x())*(p1.y()-p0.y());
+	}
 }

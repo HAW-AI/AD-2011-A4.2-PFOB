@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import adp_42_ch.interfaces.Point;
+import static adp_42_ch.implementations.Images.*;
 
 public class AngleComparator implements Comparator<Point>{
 
@@ -34,9 +35,6 @@ public class AngleComparator implements Comparator<Point>{
 	
 	public Set<Point> pointsToRemove(){
 		return new HashSet<Point>(pointsToRemove);
-	}
-	private int T(Point p0, Point p1, Point p2){
-		return (p1.x()-p0.x())*(p2.y()-p0.y())-(p2.x()-p0.x())*(p1.y()-p0.y());
 	}
 	
 }

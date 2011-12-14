@@ -11,6 +11,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
+import static adp_42_ch.implementations.Images.*;
 
 /**
  *
@@ -63,9 +64,6 @@ public class ImageMonotoneChain extends AbstractImage {
         return lowerHull;
     }
 
-    private int T(Point p0, Point p1, Point p2) {
-        return (p1.x() - p0.x()) * (p2.y() - p0.y()) - (p2.x() - p0.x()) * (p1.y() - p0.y());
-    }
 //    public static void main(String[] args) {
 //        SortedSet<Point> hull = new TreeSet<Point>(new LexicographicComparatorXfirst());
 //        hull.addAll(image(point(2, 1), point(3, 2), point(2, 3), point(1, 2), point(2, 2)).convexHull());

@@ -4,6 +4,7 @@ import java.util.*;
 
 import adp_42_ch.implementations.comparators.AngleComparator;
 import adp_42_ch.interfaces.Point;
+import static adp_42_ch.implementations.Images.*;
 
 public class ImageGrahamScan extends AbstractImage {
 
@@ -16,11 +17,6 @@ public class ImageGrahamScan extends AbstractImage {
 		return new ImageGrahamScan(points);
 	}
 	
-
-	
-	private int T(Point p0, Point p1, Point p2){
-		return (p1.x()-p0.x())*(p2.y()-p0.y())-(p2.x()-p0.x())*(p1.y()-p0.y());
-	}
 	
 	private List<Point> pointsSortedByAngle(Collection<Point> points){
 		SortedSet<Point> pointsSortedLexicographically=new TreeSet<Point>(points);
