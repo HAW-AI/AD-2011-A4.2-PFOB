@@ -23,17 +23,16 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="219" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="imagePanel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="144" max="32767" attributes="0"/>
+                      <Component id="controlPanel" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <Component id="statusTextField" alignment="1" min="-2" pref="921" max="-2" attributes="0"/>
-                  <Component id="controlPanel" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="imagePanel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="540" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -42,8 +41,8 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="controlPanel" min="-2" max="-2" attributes="0"/>
-                  <Component id="imagePanel" pref="637" max="32767" attributes="0"/>
+                  <Component id="controlPanel" max="32767" attributes="0"/>
+                  <Component id="imagePanel" alignment="0" pref="651" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="statusTextField" min="-2" max="-2" attributes="0"/>
@@ -71,7 +70,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="637" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="651" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -93,23 +92,23 @@
                   </Group>
                   <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="randomSeedTextField" alignment="0" pref="138" max="32767" attributes="0"/>
+                      <Component id="randomSeedTextField" alignment="0" pref="156" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="yMinTextField" pref="125" max="32767" attributes="0"/>
+                          <Component id="yMinTextField" pref="143" max="32767" attributes="0"/>
                           <EmptySpace min="13" pref="13" max="13" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="yMaxTextField" pref="125" max="32767" attributes="0"/>
+                          <Component id="yMaxTextField" pref="143" max="32767" attributes="0"/>
                           <EmptySpace min="13" pref="13" max="13" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="numberOfPointsTextField" pref="125" max="32767" attributes="0"/>
+                          <Component id="numberOfPointsTextField" pref="143" max="32767" attributes="0"/>
                           <EmptySpace min="13" pref="13" max="13" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="xMinTextField" alignment="0" pref="125" max="32767" attributes="0"/>
-                              <Component id="xMaxTextField" alignment="1" pref="125" max="32767" attributes="0"/>
+                              <Component id="xMinTextField" alignment="0" pref="143" max="32767" attributes="0"/>
+                              <Component id="xMaxTextField" alignment="1" pref="143" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="13" pref="13" max="13" attributes="0"/>
                       </Group>
@@ -117,14 +116,28 @@
                   <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                  <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="consoleOutputButton" alignment="0" pref="109" max="32767" attributes="0"/>
-                      <Component id="restoreDefaultsButton" alignment="0" max="32767" attributes="0"/>
-                      <Component id="okButton" alignment="0" pref="109" max="32767" attributes="0"/>
-                      <Component id="quitButton" alignment="0" pref="109" max="32767" attributes="0"/>
+                      <Component id="consoleOutputButton" alignment="0" pref="169" max="32767" attributes="0"/>
+                      <Component id="restoreDefaultsButton" alignment="0" pref="169" max="32767" attributes="0"/>
+                      <Component id="okButton" alignment="0" pref="169" max="32767" attributes="0"/>
+                      <Component id="quitButton" alignment="0" pref="169" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="325" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" pref="372" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                  <Component id="historyButton" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="167" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -167,9 +180,15 @@
                   <Component id="restoreDefaultsButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="quitButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="consoleOutputButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="101" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="historyButton" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -277,6 +296,36 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="consoleOutputButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JList" name="jListHistory">
+              <Properties>
+                <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+                <Property name="selectionMode" type="int" value="0"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="history"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="historyButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="paint selected entry"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="historyButtonActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

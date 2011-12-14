@@ -20,9 +20,10 @@ public abstract class AbstractImage implements Image {
 
 //	protected abstract List<Point> innerPoints_(Collection<Point> points, List<Point> convexHull);
     protected List<Point> innerPoints_(Collection<Point> points, List<Point> convexHull) {
-        List<Point> innerPoints = new LinkedList<Point>(points);
-        innerPoints.removeAll(convexHull);
-        return innerPoints;
+        List<Point> result = new LinkedList<Point>(points);
+        result.removeAll(convexHull);
+        Collections.sort(result, new DistanceComparator());
+        return result;
     }
 
     @Override
