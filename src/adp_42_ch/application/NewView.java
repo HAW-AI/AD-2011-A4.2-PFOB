@@ -8,6 +8,8 @@ import adp_42_ch.interfaces.RandomPoints;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 /*
@@ -92,6 +94,7 @@ public class NewView extends javax.swing.JFrame {
         restoreDefaultsButton = new javax.swing.JButton();
         quitButton = new javax.swing.JButton();
         xMinTextField = new javax.swing.JTextField();
+        consoleOutputButton = new javax.swing.JButton();
         statusTextField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -154,6 +157,13 @@ public class NewView extends javax.swing.JFrame {
 
         xMinTextField.setText(String.valueOf(Config.DEFAULT_X_MINIMUM));
 
+        consoleOutputButton.setText("console output");
+        consoleOutputButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consoleOutputButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
         controlPanelLayout.setHorizontalGroup(
@@ -185,12 +195,13 @@ public class NewView extends javax.swing.JFrame {
                             .addComponent(xMaxTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))
                         .addGap(13, 13, 13)))
                 .addGap(77, 77, 77))
-            .addGroup(controlPanelLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
                 .addGap(60, 60, 60)
-                .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(restoreDefaultsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(okButton, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
-                    .addComponent(quitButton, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE))
+                .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(consoleOutputButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
+                    .addComponent(restoreDefaultsButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(okButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
+                    .addComponent(quitButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE))
                 .addGap(155, 155, 155))
         );
         controlPanelLayout.setVerticalGroup(
@@ -226,7 +237,9 @@ public class NewView extends javax.swing.JFrame {
                 .addComponent(restoreDefaultsButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(quitButton)
-                .addContainerGap(165, Short.MAX_VALUE))
+                .addGap(41, 41, 41)
+                .addComponent(consoleOutputButton)
+                .addContainerGap(101, Short.MAX_VALUE))
         );
 
         statusTextField.setEditable(false);
@@ -314,6 +327,21 @@ public class NewView extends javax.swing.JFrame {
         statusTextField.setText("Default values restored");
     }//GEN-LAST:event_restoreDefaultsButtonActionPerformed
 
+    private void consoleOutputButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consoleOutputButtonActionPerformed
+        if (convexHull != null) {
+            List<Point> sortedConvexHull = new LinkedList<Point>(convexHull);
+            Collections.sort(sortedConvexHull, new adp_42_ch.implementations.comparators.LexicographicComparatorXfirst());
+            System.out.println("Convex hull:");
+            System.out.println(sortedConvexHull);
+        }
+        if (innerPoints != null) {
+            List<Point> sortedInnerPoints = new LinkedList<Point>(innerPoints);
+            Collections.sort(sortedInnerPoints, new adp_42_ch.implementations.comparators.DistanceComparator());
+            System.out.println("Inner points:");
+            System.out.println(sortedInnerPoints);
+        }
+    }//GEN-LAST:event_consoleOutputButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -350,6 +378,7 @@ public class NewView extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    javax.swing.JButton consoleOutputButton;
     javax.swing.JPanel controlPanel;
     javax.swing.JPanel imagePanel;
     javax.swing.JLabel numberOfPointsLabel;
