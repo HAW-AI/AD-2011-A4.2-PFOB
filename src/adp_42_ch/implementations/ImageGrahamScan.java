@@ -55,7 +55,6 @@ public class ImageGrahamScan extends AbstractImage {
 				if(i>1)i--;
 			}
 		}
-		Collections.sort(convexHull);
 		return convexHull;
 	}
 

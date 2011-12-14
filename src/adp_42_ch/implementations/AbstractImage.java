@@ -1,5 +1,6 @@
 package adp_42_ch.implementations;
 
+import adp_42_ch.implementations.comparators.LexicographicComparatorXfirst;
 import java.util.*;
 
 import adp_42_ch.interfaces.Image;
@@ -40,5 +41,12 @@ public abstract class AbstractImage implements Image {
         public int compare(Point point1, Point point2) {
             return point1.distanceToOrigin() == point2.distanceToOrigin() ? (point1.compareTo(point2)) : Double.valueOf(point1.distanceToOrigin()).compareTo(point2.distanceToOrigin());
         }
+    }
+    
+    @Override
+    public List<Point> convexHullLexicographically() {
+        List<Point> result=new ArrayList<Point>(convexHull);
+        Collections.sort(result, new LexicographicComparatorXfirst());
+        return result;
     }
 }

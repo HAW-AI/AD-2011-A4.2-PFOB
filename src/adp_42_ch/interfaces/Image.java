@@ -14,6 +14,8 @@ import java.util.List;
 public interface Image {
 
     public List<Point> convexHull();
+    
+    public List<Point> convexHullLexicographically();
 
     public List<Point> innerPoints();
 }
