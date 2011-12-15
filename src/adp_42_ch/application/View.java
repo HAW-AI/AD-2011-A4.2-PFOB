@@ -8,11 +8,9 @@ import adp_42_ch.interfaces.RandomPoints;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import javax.swing.DefaultListModel;
-import javax.swing.ListModel;
 
 /*
  * To change this template, choose Tools | Templates
@@ -335,7 +333,7 @@ public class View extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void quitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitButtonActionPerformed
-        System.exit(0);        // TODO add your handling code here:
+        System.exit(0); 
     }//GEN-LAST:event_quitButtonActionPerformed
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
