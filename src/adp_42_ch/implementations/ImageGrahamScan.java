@@ -44,7 +44,7 @@ public class ImageGrahamScan extends AbstractImage {
 	
 	@Override
 	protected List<Point> convexHull_(Collection<Point> points) {
-		if(points.size()<4) return new ArrayList<Point>(points);
+		if(points.size()<3) return new ArrayList<Point>(points);
 		List<Point> convexHull=pointsSortedByAngle(points);
 //		System.out.println("Sortierte Punkte: "+convexHull);
 		int i=1;
