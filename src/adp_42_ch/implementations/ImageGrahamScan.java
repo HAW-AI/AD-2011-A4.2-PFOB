@@ -57,14 +57,6 @@ public class ImageGrahamScan extends AbstractImage {
 		}
 		return convexHull;
 	}
-
-	@Override
-	public List<Point> innerPoints_(Collection<Point> points, List<Point> convexHull) {
-		List<Point> result=new ArrayList<Point>(points);
-		result.removeAll(convexHull);
-		Collections.sort(result, new DistanceComparator());
-		return result;
-	}
 	
 
 
