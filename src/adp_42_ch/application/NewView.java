@@ -44,6 +44,7 @@ public class NewView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        selectAlgorithmButtonGroup = new javax.swing.ButtonGroup();
         imagePanel = new javax.swing.JPanel()        {
             protected void paintComponent(Graphics g)
             {
@@ -99,8 +100,11 @@ public class NewView extends javax.swing.JFrame {
         consoleOutputButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jListHistory = new javax.swing.JList();
-        jLabel1 = new javax.swing.JLabel();
+        historyLabel = new javax.swing.JLabel();
         historyButton = new javax.swing.JButton();
+        grahamScanRadioButton = new javax.swing.JRadioButton();
+        monotoneChainRadioButton = new javax.swing.JRadioButton();
+        selectAlgorithmLabel = new javax.swing.JLabel();
         statusTextField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -173,7 +177,7 @@ public class NewView extends javax.swing.JFrame {
         jListHistory.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(jListHistory);
 
-        jLabel1.setText("history");
+        historyLabel.setText("history");
 
         historyButton.setText("paint selected entry");
         historyButton.addActionListener(new java.awt.event.ActionListener() {
@@ -181,6 +185,15 @@ public class NewView extends javax.swing.JFrame {
                 historyButtonActionPerformed(evt);
             }
         });
+
+        selectAlgorithmButtonGroup.add(grahamScanRadioButton);
+        grahamScanRadioButton.setSelected(true);
+        grahamScanRadioButton.setText("graham scan");
+
+        selectAlgorithmButtonGroup.add(monotoneChainRadioButton);
+        monotoneChainRadioButton.setText("monotone chain");
+
+        selectAlgorithmLabel.setText("select algorithm:");
 
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
@@ -197,41 +210,49 @@ public class NewView extends javax.swing.JFrame {
                     .addComponent(randomSeedLabel))
                 .addGap(18, 18, 18)
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(randomSeedTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
+                    .addComponent(randomSeedTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
                     .addGroup(controlPanelLayout.createSequentialGroup()
-                        .addComponent(yMinTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+                        .addComponent(yMinTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
                         .addGap(13, 13, 13))
                     .addGroup(controlPanelLayout.createSequentialGroup()
-                        .addComponent(yMaxTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+                        .addComponent(yMaxTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
                         .addGap(13, 13, 13))
                     .addGroup(controlPanelLayout.createSequentialGroup()
-                        .addComponent(numberOfPointsTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+                        .addComponent(numberOfPointsTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
                         .addGap(13, 13, 13))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
                         .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(xMinTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
-                            .addComponent(xMaxTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE))
+                            .addComponent(xMinTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
+                            .addComponent(xMaxTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE))
                         .addGap(13, 13, 13)))
                 .addGap(77, 77, 77))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
                 .addGap(60, 60, 60)
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(consoleOutputButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
-                    .addComponent(restoreDefaultsButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
-                    .addComponent(okButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
-                    .addComponent(quitButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE))
+                    .addComponent(consoleOutputButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
+                    .addComponent(restoreDefaultsButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
+                    .addComponent(okButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
+                    .addComponent(quitButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE))
                 .addGap(155, 155, 155))
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(325, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE))
+                .addComponent(historyLabel)
+                .addContainerGap(430, Short.MAX_VALUE))
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addGap(64, 64, 64)
                 .addComponent(historyButton)
-                .addContainerGap(167, Short.MAX_VALUE))
+                .addContainerGap(280, Short.MAX_VALUE))
+            .addGroup(controlPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(controlPanelLayout.createSequentialGroup()
+                        .addComponent(selectAlgorithmLabel)
+                        .addGap(18, 18, 18)
+                        .addComponent(grahamScanRadioButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(monotoneChainRadioButton)
+                        .addContainerGap())
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 463, Short.MAX_VALUE)))
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -269,12 +290,17 @@ public class NewView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(consoleOutputButton)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1)
+                .addComponent(historyLabel)
                 .addGap(11, 11, 11)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(historyButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(selectAlgorithmLabel)
+                    .addComponent(grahamScanRadioButton)
+                    .addComponent(monotoneChainRadioButton))
+                .addGap(47, 47, 47))
         );
 
         statusTextField.setEditable(false);
@@ -288,7 +314,7 @@ public class NewView extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(imagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                         .addComponent(controlPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(statusTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 921, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
@@ -298,7 +324,7 @@ public class NewView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(controlPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(controlPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 651, Short.MAX_VALUE)
                     .addComponent(imagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 651, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(statusTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -364,44 +390,50 @@ public class NewView extends javax.swing.JFrame {
     }//GEN-LAST:event_consoleOutputButtonActionPerformed
 
 private void historyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historyButtonActionPerformed
-        if(!jListHistory.isSelectionEmpty()){
-            RandomPoints rp=history.get(jListHistory.getSelectedIndex());
-            setImage(rp);
-            statusTextField.setText("Entry from history restored");
-            randomSeedTextField.setText(String.valueOf(rp.seed()));
-            xMinTextField.setText(String.valueOf(rp.minX()));
-            xMaxTextField.setText(String.valueOf(rp.maxX()));
-            yMinTextField.setText(String.valueOf(rp.minY()));
-            yMaxTextField.setText(String.valueOf(rp.maxY()));
-            numberOfPointsTextField.setText(String.valueOf(rp.size()));
-        }
-        else statusTextField.setText("Nothing Selected");
+    if (!jListHistory.isSelectionEmpty()) {
+        RandomPoints rp = history.get(jListHistory.getSelectedIndex());
+        setImage(rp);
+        statusTextField.setText("Entry from history restored");
+        randomSeedTextField.setText(String.valueOf(rp.seed()));
+        xMinTextField.setText(String.valueOf(rp.minX()));
+        xMaxTextField.setText(String.valueOf(rp.maxX()));
+        yMinTextField.setText(String.valueOf(rp.minY()));
+        yMaxTextField.setText(String.valueOf(rp.maxY()));
+        numberOfPointsTextField.setText(String.valueOf(rp.size()));
+    } else {
+        statusTextField.setText("Nothing Selected");
+    }
 }//GEN-LAST:event_historyButtonActionPerformed
 
-    private void setImage(RandomPoints rp){
-                currentImage = image(rp.points());
-                convexHull=currentImage.convexHull();
-                innerPoints=currentImage.innerPoints();
-                this.yMax=rp.maxY();
-                this.xMin=rp.minX();
-                xFactor = ((double) imagePanel.getWidth() - 2 * Config.PIXEL_RADIUS) / (rp.maxX() - rp.minX());
-                yFactor = ((double) imagePanel.getHeight() - 2 * Config.PIXEL_RADIUS) / (rp.maxY() - rp.minY());
+    private void setImage(RandomPoints rp) {
+        if (grahamScanRadioButton.isSelected()) {
+            currentImage = imageGrahamScan(rp.points());
+        } else if (monotoneChainRadioButton.isSelected()) {
+            currentImage = imageMonotoneChain(rp.points());
+        }
+        convexHull = currentImage.convexHull();
+        innerPoints = currentImage.innerPoints();
+        this.yMax = rp.maxY();
+        this.xMin = rp.minX();
+        xFactor = ((double) imagePanel.getWidth() - 2 * Config.PIXEL_RADIUS) / (rp.maxX() - rp.minX());
+        yFactor = ((double) imagePanel.getHeight() - 2 * Config.PIXEL_RADIUS) / (rp.maxY() - rp.minY());
 
-                imagePanel.repaint();
-                statusTextField.setText("Seed: " + String.valueOf(rp.seed()));
+        imagePanel.repaint();
+        statusTextField.setText("Seed: " + String.valueOf(rp.seed()));
 
     }
-    
-    private void updateHistory(RandomPoints rp){
-                history.add(rp);
-                DefaultListModel listmodel=new DefaultListModel();
-                int i=1;
-                for(RandomPoints entry:history){
-                    listmodel.addElement(i+".: "+entry.seed());
-                }
-                jListHistory.setModel(listmodel);
-                controlPanel.repaint();
+
+    private void updateHistory(RandomPoints rp) {
+        history.add(rp);
+        DefaultListModel listmodel = new DefaultListModel();
+        int i = 1;
+        for (RandomPoints entry : history) {
+            listmodel.addElement(i + ".: " + entry.seed());
+        }
+        jListHistory.setModel(listmodel);
+        controlPanel.repaint();
     }
+
     /**
      * @param args the command line arguments
      */
@@ -440,11 +472,13 @@ private void historyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN
     // Variables declaration - do not modify//GEN-BEGIN:variables
     javax.swing.JButton consoleOutputButton;
     javax.swing.JPanel controlPanel;
+    javax.swing.JRadioButton grahamScanRadioButton;
     javax.swing.JButton historyButton;
+    javax.swing.JLabel historyLabel;
     javax.swing.JPanel imagePanel;
-    javax.swing.JLabel jLabel1;
     javax.swing.JList jListHistory;
     javax.swing.JScrollPane jScrollPane1;
+    javax.swing.JRadioButton monotoneChainRadioButton;
     javax.swing.JLabel numberOfPointsLabel;
     javax.swing.JTextField numberOfPointsTextField;
     javax.swing.JButton okButton;
@@ -452,6 +486,8 @@ private void historyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN
     javax.swing.JLabel randomSeedLabel;
     javax.swing.JTextField randomSeedTextField;
     javax.swing.JButton restoreDefaultsButton;
+    javax.swing.ButtonGroup selectAlgorithmButtonGroup;
+    javax.swing.JLabel selectAlgorithmLabel;
     javax.swing.JTextField statusTextField;
     javax.swing.JLabel xMaxLabel;
     javax.swing.JTextField xMaxTextField;
@@ -468,7 +504,6 @@ private void historyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN
     private int yMax;
     private double xFactor;
     private double yFactor;
-    private final List<RandomPoints> history=new LinkedList<RandomPoints>();
+    private final List<RandomPoints> history = new LinkedList<RandomPoints>();
     private Image currentImage;
-    
 }

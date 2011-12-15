@@ -1,6 +1,10 @@
 <?xml version="1.1" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="selectAlgorithmButtonGroup">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -27,7 +31,7 @@
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="imagePanel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="144" max="32767" attributes="0"/>
+                      <EmptySpace pref="55" max="32767" attributes="0"/>
                       <Component id="controlPanel" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="statusTextField" alignment="1" min="-2" pref="921" max="-2" attributes="0"/>
@@ -41,7 +45,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="controlPanel" max="32767" attributes="0"/>
+                  <Component id="controlPanel" pref="651" max="32767" attributes="0"/>
                   <Component id="imagePanel" alignment="0" pref="651" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -92,23 +96,23 @@
                   </Group>
                   <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="randomSeedTextField" alignment="0" pref="156" max="32767" attributes="0"/>
+                      <Component id="randomSeedTextField" alignment="0" pref="287" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="yMinTextField" pref="143" max="32767" attributes="0"/>
+                          <Component id="yMinTextField" pref="274" max="32767" attributes="0"/>
                           <EmptySpace min="13" pref="13" max="13" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="yMaxTextField" pref="143" max="32767" attributes="0"/>
+                          <Component id="yMaxTextField" pref="274" max="32767" attributes="0"/>
                           <EmptySpace min="13" pref="13" max="13" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="numberOfPointsTextField" pref="143" max="32767" attributes="0"/>
+                          <Component id="numberOfPointsTextField" pref="274" max="32767" attributes="0"/>
                           <EmptySpace min="13" pref="13" max="13" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="xMinTextField" alignment="0" pref="143" max="32767" attributes="0"/>
-                              <Component id="xMaxTextField" alignment="1" pref="143" max="32767" attributes="0"/>
+                              <Component id="xMinTextField" alignment="0" pref="274" max="32767" attributes="0"/>
+                              <Component id="xMaxTextField" alignment="1" pref="274" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="13" pref="13" max="13" attributes="0"/>
                       </Group>
@@ -118,26 +122,36 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="consoleOutputButton" alignment="0" pref="169" max="32767" attributes="0"/>
-                      <Component id="restoreDefaultsButton" alignment="0" pref="169" max="32767" attributes="0"/>
-                      <Component id="okButton" alignment="0" pref="169" max="32767" attributes="0"/>
-                      <Component id="quitButton" alignment="0" pref="169" max="32767" attributes="0"/>
+                      <Component id="consoleOutputButton" alignment="0" pref="258" max="32767" attributes="0"/>
+                      <Component id="restoreDefaultsButton" alignment="0" pref="258" max="32767" attributes="0"/>
+                      <Component id="okButton" alignment="0" pref="258" max="32767" attributes="0"/>
+                      <Component id="quitButton" alignment="0" pref="258" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="325" max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" pref="372" max="32767" attributes="0"/>
+                  <Component id="historyLabel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="430" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                   <Component id="historyButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="167" max="32767" attributes="0"/>
+                  <EmptySpace pref="280" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="selectAlgorithmLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="grahamScanRadioButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="monotoneChainRadioButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jScrollPane1" alignment="0" pref="463" max="32767" attributes="0"/>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
@@ -183,12 +197,18 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="consoleOutputButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="historyLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="historyButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="selectAlgorithmLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="grahamScanRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="monotoneChainRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -315,7 +335,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="historyLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="history"/>
           </Properties>
@@ -327,6 +347,28 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="historyButtonActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="grahamScanRadioButton">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="selectAlgorithmButtonGroup"/>
+            </Property>
+            <Property name="selected" type="boolean" value="true"/>
+            <Property name="text" type="java.lang.String" value="graham scan"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="monotoneChainRadioButton">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="selectAlgorithmButtonGroup"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="monotone chain"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="selectAlgorithmLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="select algorithm:"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
