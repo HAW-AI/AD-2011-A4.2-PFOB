@@ -38,10 +38,10 @@ public class PointImplTest {
 	@Test
 	public void testCompareTo() {
 		assertEquals(-1,point(1,2).compareTo(point(1,3)));
-		assertEquals(-1,point(3,2).compareTo(point(1,3)));
+		assertEquals(2,point(3,2).compareTo(point(1,3)));
 		assertEquals(0,point(3,2).compareTo(point(3,2)));
-		assertEquals(1,point(3,4).compareTo(point(3,2)));
-		assertEquals(1,point(3,4).compareTo(point(4,2)));
+		assertEquals(2,point(3,4).compareTo(point(3,2)));
+		assertEquals(-1,point(3,4).compareTo(point(4,2)));
 	}
 
 }

@@ -357,7 +357,7 @@ public class View extends javax.swing.JFrame {
                 rp = randomPoints(numberOfPoints, xMin, xMax, yMin, yMax);
             }
             if (rp instanceof NaRP) {
-                statusTextField.setText("Precodition violated - RTFM!");
+                statusTextField.setText("Precondition violated!");
             } else {
                 updateHistory(rp);
                 setImage(rp);

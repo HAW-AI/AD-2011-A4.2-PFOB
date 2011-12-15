@@ -18,14 +18,11 @@ public class RandomPointsImplTest {
 		
 	}
 
-	@Test
-	public void testSeed() {
-		fail("Not yet implemented");
-	}
+
 
 	@Test
 	public void testPoints() {
-		Set<Point> points=randomPoints(10, -10,20,40,70).points();
+		Set<Point> points=randomPoints(10,-10,20,40,70).points();
 		for(Point p: points){
 			assertTrue(p.x()>=-10 && p.x()<=20 && p.y()>=40 && p.y()<=70);
 		}
@@ -41,7 +38,7 @@ public class RandomPointsImplTest {
 	@Test
 	public void testMaxX() {
 		assertEquals(2,randomPoints(2, 1,2,3,4).maxX());
-		System.out.println(randomPoints(10, Integer.MIN_VALUE,10,3,4).points());
+		assertEquals(NaRP(),randomPoints(10, Integer.MIN_VALUE,10,3,4));
 		assertEquals(NaRP(),randomPoints(10, 1,Integer.MAX_VALUE,3,4));
 	}
 
