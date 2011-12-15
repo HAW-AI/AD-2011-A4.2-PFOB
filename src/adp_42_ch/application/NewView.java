@@ -428,7 +428,7 @@ private void historyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN
         DefaultListModel listmodel = new DefaultListModel();
         int i = 1;
         for (RandomPoints entry : history) {
-            listmodel.addElement(i + ".: " + entry.seed());
+            listmodel.addElement(i++ + ".: " + entry.seed());
         }
         jListHistory.setModel(listmodel);
         controlPanel.repaint();
