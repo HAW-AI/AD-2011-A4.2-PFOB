@@ -3,6 +3,7 @@ package adp_42_ch.implementations;
 import java.util.*;
 
 import adp_42_ch.implementations.comparators.AngleComparator;
+import adp_42_ch.implementations.comparators.LexicographicComparatorYfirst;
 import adp_42_ch.interfaces.Point;
 import static adp_42_ch.implementations.Images.*;
 
@@ -19,23 +20,14 @@ public class ImageGrahamScan extends AbstractImage {
 	
 	
 	private List<Point> pointsSortedByAngle(Collection<Point> points){
-		SortedSet<Point> pointsSortedLexicographically=new TreeSet<Point>(points);
-//		System.out.println("Lexikographische Sortierung: "+pointsSortedLexicographically);
-		Point p0=pointsSortedLexicographically.first();
-		
-//		System.out.println("P0: "+p0);
-		
+		SortedSet<Point> pointsSortedLexicographically=new TreeSet<Point>(new LexicographicComparatorYfirst());
+		pointsSortedLexicographically.addAll(points);
+		Point p0=pointsSortedLexicographically.first();		
 		pointsSortedLexicographically.remove(p0);
 		AngleComparator angleComparator=new AngleComparator(p0);
 		List<Point> pointsSortedByAngle=new LinkedList<Point>(pointsSortedLexicographically);
-		Collections.sort(pointsSortedByAngle, angleComparator);
-		
-//		System.out.println(pointsSortedByAngle);
-		
-//		System.out.println("PointsToRemove: "+angleComparator.pointsToRemove());
-		pointsSortedByAngle.removeAll(angleComparator.pointsToRemove());
-		
-//		System.out.println(pointsSortedByAngle);
+		Collections.sort(pointsSortedByAngle, angleComparator);		
+		pointsSortedByAngle.removeAll(angleComparator.pointsToRemove());		
 		List<Point> result=new LinkedList<Point>();
 		result.add(p0);
 		result.addAll(pointsSortedByAngle);
