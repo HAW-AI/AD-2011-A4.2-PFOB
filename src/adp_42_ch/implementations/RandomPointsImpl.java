@@ -39,10 +39,12 @@ public class RandomPointsImpl implements RandomPoints {
 	}
 	
 	static RandomPoints create(long seed, int numberOfPoints, int minX, int maxX, int minY, int maxY){
-		if(numberOfPoints<=0 || minX>maxX || minY>maxY || 
-				maxX==Integer.MAX_VALUE || maxY==Integer.MAX_VALUE || maxX+1-minX<0 || maxY+1-minY<0
-				|| ((long)(maxX+1-minX)*(long)(maxY+1-minY))<numberOfPoints) return NaRP();
-		return new RandomPointsImpl(seed, numberOfPoints, minX, maxX, minY, maxY);
+//		if(numberOfPoints<=0 || minX>maxX || minY>maxY || 
+//				maxX==Integer.MAX_VALUE || maxY==Integer.MAX_VALUE || maxX+1-minX<0 || maxY+1-minY<0
+//				|| ((long)(maxX+1-minX)*(long)(maxY+1-minY))<numberOfPoints) return NaRP();
+                if (numberOfPoints<=0 || minX>maxX || minY>maxY || minX<-8192 || minY<-8192 ||
+                        maxX>8191 || maxY>8191 || (maxX+1-minX)*(maxY+1-minY)<numberOfPoints) return NaRP();
+            return new RandomPointsImpl(seed, numberOfPoints, minX, maxX, minY, maxY);
 	}
 	
 	private Set<Point> calculatePoints(int numberOfPoints, int minX, int maxX, int minY, int maxY) {
