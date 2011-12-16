@@ -27,7 +27,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="655" max="32767" attributes="0"/>
+              <EmptySpace pref="629" max="32767" attributes="0"/>
               <Component id="controlPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -48,12 +48,12 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="imagePanel" pref="593" max="32767" attributes="1"/>
-                  <Component id="controlPanel" alignment="0" pref="593" max="32767" attributes="1"/>
+                  <Component id="imagePanel" pref="621" max="32767" attributes="1"/>
+                  <Component id="controlPanel" alignment="0" max="32767" attributes="1"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="statusTextField" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="76" max="32767" attributes="0"/>
+              <EmptySpace pref="48" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -77,7 +77,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="593" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="621" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -99,23 +99,23 @@
                   </Group>
                   <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="randomSeedTextField" alignment="0" pref="297" max="32767" attributes="0"/>
+                      <Component id="randomSeedTextField" alignment="0" pref="323" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="yMinTextField" pref="284" max="32767" attributes="0"/>
+                          <Component id="yMinTextField" pref="310" max="32767" attributes="0"/>
                           <EmptySpace min="13" pref="13" max="13" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="yMaxTextField" pref="284" max="32767" attributes="0"/>
+                          <Component id="yMaxTextField" pref="310" max="32767" attributes="0"/>
                           <EmptySpace min="13" pref="13" max="13" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="numberOfPointsTextField" pref="284" max="32767" attributes="0"/>
+                          <Component id="numberOfPointsTextField" pref="310" max="32767" attributes="0"/>
                           <EmptySpace min="13" pref="13" max="13" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="xMinTextField" alignment="0" pref="284" max="32767" attributes="0"/>
-                              <Component id="xMaxTextField" alignment="1" pref="284" max="32767" attributes="0"/>
+                              <Component id="xMinTextField" alignment="0" pref="310" max="32767" attributes="0"/>
+                              <Component id="xMaxTextField" alignment="1" pref="310" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="13" pref="13" max="13" attributes="0"/>
                       </Group>
@@ -125,26 +125,26 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="consoleOutputButton" alignment="0" pref="268" max="32767" attributes="0"/>
-                      <Component id="restoreDefaultsButton" alignment="0" pref="268" max="32767" attributes="0"/>
-                      <Component id="okButton" alignment="0" pref="268" max="32767" attributes="0"/>
-                      <Component id="quitButton" alignment="0" pref="268" max="32767" attributes="0"/>
+                      <Component id="consoleOutputButton" alignment="0" pref="294" max="32767" attributes="0"/>
+                      <Component id="restoreDefaultsButton" alignment="0" pref="294" max="32767" attributes="0"/>
+                      <Component id="okButton" alignment="0" pref="294" max="32767" attributes="0"/>
+                      <Component id="quitButton" alignment="0" pref="294" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                   <Component id="historyButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="290" max="32767" attributes="0"/>
+                  <EmptySpace pref="316" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="historyLabel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="440" max="32767" attributes="0"/>
+                  <EmptySpace pref="466" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" pref="463" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" pref="489" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
@@ -154,7 +154,12 @@
                   <Component id="grahamScanRadioButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="monotoneChainRadioButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="186" max="32767" attributes="0"/>
+                  <EmptySpace pref="212" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                  <Component id="fileButton" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="349" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -211,7 +216,8 @@
                       <Component id="grahamScanRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="monotoneChainRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                  <EmptySpace pref="24" max="32767" attributes="0"/>
+                  <Component id="fileButton" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -372,6 +378,14 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="select algorithm:"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="fileButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Paint from file"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fileButtonActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

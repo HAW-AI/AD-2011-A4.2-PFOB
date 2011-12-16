@@ -11,6 +11,7 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 import javax.swing.DefaultListModel;
+import javax.swing.JFileChooser;
 
 /*
  * To change this template, choose Tools | Templates
@@ -103,6 +104,7 @@ public class View extends javax.swing.JFrame {
         grahamScanRadioButton = new javax.swing.JRadioButton();
         monotoneChainRadioButton = new javax.swing.JRadioButton();
         selectAlgorithmLabel = new javax.swing.JLabel();
+        fileButton = new javax.swing.JButton();
         statusTextField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -117,7 +119,7 @@ public class View extends javax.swing.JFrame {
         );
         imagePanelLayout.setVerticalGroup(
             imagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 593, Short.MAX_VALUE)
+            .addGap(0, 621, Short.MAX_VALUE)
         );
 
         randomSeedLabel.setText("random seed");
@@ -193,6 +195,13 @@ public class View extends javax.swing.JFrame {
 
         selectAlgorithmLabel.setText("select algorithm:");
 
+        fileButton.setText("Paint from file");
+        fileButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fileButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
         controlPanelLayout.setHorizontalGroup(
@@ -208,41 +217,41 @@ public class View extends javax.swing.JFrame {
                     .addComponent(randomSeedLabel))
                 .addGap(18, 18, 18)
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(randomSeedTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 297, Short.MAX_VALUE)
+                    .addComponent(randomSeedTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
                     .addGroup(controlPanelLayout.createSequentialGroup()
-                        .addComponent(yMinTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
+                        .addComponent(yMinTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
                         .addGap(13, 13, 13))
                     .addGroup(controlPanelLayout.createSequentialGroup()
-                        .addComponent(yMaxTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
+                        .addComponent(yMaxTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
                         .addGap(13, 13, 13))
                     .addGroup(controlPanelLayout.createSequentialGroup()
-                        .addComponent(numberOfPointsTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
+                        .addComponent(numberOfPointsTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
                         .addGap(13, 13, 13))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
                         .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(xMinTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
-                            .addComponent(xMaxTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE))
+                            .addComponent(xMinTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+                            .addComponent(xMaxTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE))
                         .addGap(13, 13, 13)))
                 .addGap(77, 77, 77))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
                 .addGap(60, 60, 60)
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(consoleOutputButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
-                    .addComponent(restoreDefaultsButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
-                    .addComponent(okButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
-                    .addComponent(quitButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE))
+                    .addComponent(consoleOutputButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
+                    .addComponent(restoreDefaultsButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
+                    .addComponent(okButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
+                    .addComponent(quitButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE))
                 .addGap(155, 155, 155))
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addGap(64, 64, 64)
                 .addComponent(historyButton)
-                .addContainerGap(290, Short.MAX_VALUE))
+                .addContainerGap(316, Short.MAX_VALUE))
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(historyLabel)
-                .addContainerGap(440, Short.MAX_VALUE))
+                .addContainerGap(466, Short.MAX_VALUE))
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 463, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 489, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addContainerGap()
@@ -251,7 +260,11 @@ public class View extends javax.swing.JFrame {
                 .addComponent(grahamScanRadioButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(monotoneChainRadioButton)
-                .addContainerGap(186, Short.MAX_VALUE))
+                .addContainerGap(212, Short.MAX_VALUE))
+            .addGroup(controlPanelLayout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addComponent(fileButton)
+                .addContainerGap(349, Short.MAX_VALUE))
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -299,7 +312,8 @@ public class View extends javax.swing.JFrame {
                     .addComponent(selectAlgorithmLabel)
                     .addComponent(grahamScanRadioButton)
                     .addComponent(monotoneChainRadioButton))
-                .addGap(47, 47, 47))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addComponent(fileButton))
         );
 
         statusTextField.setEditable(false);
@@ -309,7 +323,7 @@ public class View extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(655, Short.MAX_VALUE)
+                .addContainerGap(629, Short.MAX_VALUE)
                 .addComponent(controlPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
@@ -326,11 +340,11 @@ public class View extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(imagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
-                    .addComponent(controlPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE))
+                    .addComponent(imagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE)
+                    .addComponent(controlPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(statusTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         pack();
@@ -407,20 +421,51 @@ private void historyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN
     }
 }//GEN-LAST:event_historyButtonActionPerformed
 
-    private void setImage(RandomPoints rp) {
+    private void fileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fileButtonActionPerformed
+        fileChooser=new JFileChooser();
+        int returnVal=fileChooser.showOpenDialog(this);
+        if(returnVal==JFileChooser.APPROVE_OPTION){
+        Parser parser=Parser.create(fileChooser.getSelectedFile());
         if (grahamScanRadioButton.isSelected()) {
-            currentImage = imageGrahamScan(rp.points());
+            setImage(imageGrahamScan(parser.points()),parser.minX(),parser.maxX(),parser.minY(),parser.maxY());
         } else if (monotoneChainRadioButton.isSelected()) {
-            currentImage = imageMonotoneChain(rp.points());
+            setImage(imageMonotoneChain(parser.points()),parser.minX(),parser.maxX(),parser.minY(),parser.maxY());
+        }   
+        statusTextField.setText("File opened");
         }
+        else{
+            statusTextField.setText("No File selected");
+        }
+        
+    }//GEN-LAST:event_fileButtonActionPerformed
+
+    private void setImage(Image image, int minX, int maxX, int minY, int maxY) {
+        currentImage=image;
         convexHull = currentImage.convexHull();
         innerPoints = currentImage.innerPoints();
-        this.yMax = rp.maxY();
-        this.xMin = rp.minX();
-        xFactor = ((double) imagePanel.getWidth() - 2 * Config.PIXEL_RADIUS) / (rp.maxX() - rp.minX());
-        yFactor = ((double) imagePanel.getHeight() - 2 * Config.PIXEL_RADIUS) / (rp.maxY() - rp.minY());
-
+        this.yMax = maxY;
+        this.xMin = minX;
+        xFactor = ((double) imagePanel.getWidth() - 2 * Config.PIXEL_RADIUS) / (maxX - minX);
+        yFactor = ((double) imagePanel.getHeight() - 2 * Config.PIXEL_RADIUS) / (maxY - minY);
         imagePanel.repaint();
+    }
+    
+    private void setImage(RandomPoints rp) {
+        Image image=null;
+        if (grahamScanRadioButton.isSelected()) {
+            image = imageGrahamScan(rp.points());
+        } else if (monotoneChainRadioButton.isSelected()) {
+            image = imageMonotoneChain(rp.points());
+        }
+        setImage(image,rp.minX(),rp.maxX(),rp.minY(),rp.maxY());
+//        convexHull = currentImage.convexHull();
+//        innerPoints = currentImage.innerPoints();
+//        this.yMax = rp.maxY();
+//        this.xMin = rp.minX();
+//        xFactor = ((double) imagePanel.getWidth() - 2 * Config.PIXEL_RADIUS) / (rp.maxX() - rp.minX());
+//        yFactor = ((double) imagePanel.getHeight() - 2 * Config.PIXEL_RADIUS) / (rp.maxY() - rp.minY());
+
+//        imagePanel.repaint();
         statusTextField.setText("Seed: " + String.valueOf(rp.seed()));
 
     }
@@ -474,6 +519,7 @@ private void historyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN
     // Variables declaration - do not modify//GEN-BEGIN:variables
     javax.swing.JButton consoleOutputButton;
     javax.swing.JPanel controlPanel;
+    javax.swing.JButton fileButton;
     javax.swing.JRadioButton grahamScanRadioButton;
     javax.swing.JButton historyButton;
     javax.swing.JLabel historyLabel;
@@ -508,4 +554,5 @@ private void historyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN
     private double yFactor;
     private final List<RandomPoints> history = new LinkedList<RandomPoints>();
     private Image currentImage;
+    private JFileChooser fileChooser;
 }
